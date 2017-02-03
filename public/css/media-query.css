@@ -1,0 +1,219 @@
+/* MEDIA QUERIES */
+
+
+/* Mobile View*/
+@media only screen
+    and (max-width: 767px) {
+    /* Navbar */
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 380px;
+        overflow-y: hidden;
+    }
+    /* Navbar */
+
+    /* Sidebar */
+    #wrapper {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .rs-sidebar-left-fixed {
+        display: none;
+    }
+    #wrapper, #wrapper.toggled {
+        padding-left: 0;
+    }
+    #wrapper #sidebar-wrapper{
+        width: 0;
+    }
+    #wrapper + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 0;
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        width: 0;
+    }
+    #wrapper.toggled + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 0;
+    }
+    /* Side bar */
+}
+
+
+/* Tablet View */
+@media only screen
+    and (min-width: 768px)
+    and (max-width: 991px){
+    /* Navbar */
+    .navbar-header {
+        clear: both;
+        display: block;
+        width: 100%;
+        float: left;
+        position: relative;
+        left:33%;
+    }
+    .navbar-collapse {
+        clear: both;
+        display: block;
+        width: 100%;
+        position: static;
+        left: 0;
+        float: left;
+    }
+    .navbar-right {
+        float: left !important;
+        position: relative;
+        left:18%;
+    }
+    .rs-row-navbar {
+        margin-bottom: 100px;
+    }
+    .rs-active {
+        background-color: transparent;
+        border-bottom: 3px solid #F60006;
+    }
+    .navbar-inverse .navbar-nav > li:not(.rs-active):hover,
+    .navbar-inverse .navbar-nav > li:not(.rs-active):focus{
+        color: #9d9d9d;
+        padding-bottom: 3px;
+        margin-bottom: -1px;
+    }
+    .navbar-inverse .navbar-nav > li > a:focus {
+        margin: 0 0;
+        border: none;
+    }
+    /* Navbar*/
+
+
+    /* Sidebar */
+    #wrapper {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 265px;
+    }
+    #wrapper #sidebar-wrapper{
+        width: 0;
+    }
+    #wrapper.toggled + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 265px;
+    }
+    #wrapper + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 0;
+    }
+    /* Sidebar */
+}
+
+
+/* Desktop View */
+@media only screen
+    and (min-width: 992px)
+    and (max-width: 1279px) {
+
+    /* Sidebar */
+    #wrapper {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+    #wrapper #sidebar-wrapper{
+        width: 265px;
+    }
+    #wrapper.toggled + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 0;
+    }
+    #wrapper + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 265px;
+    }
+    /* Sidebar */
+}
+
+
+/* Huge Desktop View */
+@media only screen and (min-width: 1280px) {
+
+    /* Sidebar */
+    #wrapper {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+    #wrapper #sidebar-wrapper{
+        width: 265px;
+    }
+    #wrapper.toggled + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 0;
+    }
+    #wrapper + .rs-sidebar-right-static {
+        position: relative;
+        margin-left: 265px;
+    }
+    /* Sidebar */
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* Larger than Mobile */
+@media only screen and (min-width: 768px) {
+    .rs-margin-right {
+        margin-right: 5px;
+    }
+}
+
+
+@media only screen and (max-width: 620px) {
+
+    /* Table */
+
+    .rs-filter {
+        float: left;
+    }
+
+    .rs-filter-input {
+        float: left;
+    }
+
+    .rs-show {
+        float: left;
+    }
+
+    .rs-show-input {
+        float: left;
+    }
+
+    .rs-pagination {
+        float: left;
+    }
+
+    .rs-showing {
+        float: left;
+    }
+
+    .rs-show-mobile {
+        display: block;
+    }
+
+    .rs-hide-mobile {
+        display: none;
+    }
+    /* /Table */
+}

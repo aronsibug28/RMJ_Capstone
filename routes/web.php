@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/admin/users', 'PageController@users');
+Route::get('/admin/user-roles', 'PageController@userRoles');
+
+
+Route::post('/editUser', 'UsersController@editUser');
+Route::post('/addUser', 'UsersController@addUser');
+Route::post('/deleteUser', 'UsersController@deleteUser');
+
+
+Route::post('/editUserRole', 'UserRolesController@editUserRole');
+Route::post('/addUserRole', 'UserRolesController@addUserRole');
+Route::post('/deleteUserRole', 'UserRolesController@deleteUserRole');
