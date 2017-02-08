@@ -153,12 +153,12 @@ $('.user-role-modal-footer').on('click', '.add_user_role_action_modal', function
                     $('.container-message').removeClass('animated fadeInUp');
                     $('.container-message').addClass('animated fadeOut');
                 });
-            }
 
-            UserRoleCount = parseInt($('.user-role-count').text(), 10);
-            UserRoleCount = UserRoleCount + 1;
-            $('.user-role-count').text(UserRoleCount);
-            $('.user-role-count2').text(UserRoleCount);
+                UserRoleCount = parseInt($('.user-role-count').text(), 10);
+                UserRoleCount = UserRoleCount + 1;
+                $('.user-role-count').text(UserRoleCount);
+                $('.user-role-count2').text(UserRoleCount);
+            }
 
             // to clear values on fields
             $('#userrole').val('');

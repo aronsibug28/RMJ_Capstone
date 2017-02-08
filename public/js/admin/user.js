@@ -192,12 +192,12 @@ $('.user-modal-footer').on('click', '.add_user_action_modal', function() {
                     $('.container-message').removeClass('animated fadeInUp');
                     $('.container-message').addClass('animated fadeOut');
                 });
-            }
 
-            UserCount = parseInt($('.user-count').text(), 10);
-            UserCount = UserCount + 1;
-            $('.user-count').text(UserCount);
-            $('.user-count2').text(UserCount);
+                UserCount = parseInt($('.user-count').text(), 10);
+                UserCount = UserCount + 1;
+                $('.user-count').text(UserCount);
+                $('.user-count2').text(UserCount);
+            }
 
             // to clear values on fields
             $('#lastname').val('');
