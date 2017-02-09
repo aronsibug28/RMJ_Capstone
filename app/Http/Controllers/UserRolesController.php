@@ -13,7 +13,7 @@ class UserRolesController extends Controller
     public function addUserRole(Request $request)
     {
         $rules = array(
-            'roleName' => 'required'
+            'roleName' => 'required|unique:user_roles|max:50'
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -36,7 +36,7 @@ class UserRolesController extends Controller
     public function editUserRole(Request $request)
     {
         $rules = array(
-            'roleName' => 'required'
+            'roleName' => 'required|unique:user_roles|max:50'
         );
 
         $validator = Validator::make(Input::all(), $rules);

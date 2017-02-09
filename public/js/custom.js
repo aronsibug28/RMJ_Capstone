@@ -32,3 +32,4 @@ $(document).ready(function () {
         $('#status').text('Disabled');
     });
 });
+

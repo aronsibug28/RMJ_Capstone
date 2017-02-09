@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 
 class UsersController extends Controller
@@ -14,10 +15,10 @@ class UsersController extends Controller
     public function addUser(Request $request)
     {
         $rules = array(
-            'lastName' => 'required',
-            'firstName' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'lastName' => 'required|max:30',
+            'firstName' => 'required|max:30',
+            'email' => ['required', 'email', 'unique:users,email', 'max:50'],
+            'password' => 'required|max:30|min:6'
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -45,10 +46,14 @@ class UsersController extends Controller
     public function editUser(Request $request)
     {
         $rules = array(
-            'lastName' => 'required',
-            'firstName' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'lastName' => 'required|max:30',
+            'firstName' => 'required|max:30',
+            'email' => ['required',
+                Rule::unique('users')->ignore($request->id),
+                'email',
+                'max:50'
+            ],
+            'password' => 'required|max:30|min:6'
         );
 
         $validator = Validator::make(Input::all(), $rules);

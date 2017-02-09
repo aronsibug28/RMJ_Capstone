@@ -54,6 +54,7 @@
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="rs-user-dropdown">
                                         <span class="pull-left" id="userrole"></span> <span class="caret pull-right rs-user-dropdown"></span>
                                     </button>
+
                                     <ul class="dropdown-menu rs-user-dropdown-width rs-index-top">
 
                                         @foreach($userRoles as $userRole)
@@ -100,7 +101,7 @@
 
             <div class="modal-footer user-modal-footer">
                 <button type="button" href="#" class="btn btn-link" data-dismiss="modal">Cancel</button>
-                <button type="button" href="#" id="user-action-btn-modal" class="btn btn-primary rs-btn-primary user_action_modal" >Save Changes</button>
+                <button type="button" href="#" id="user-action-btn-modal" class="btn btn-primary rs-btn-primary user_action_modal"  onclick="validate()">Save Changes</button>
             </div>
         </div>
     </div>

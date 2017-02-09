@@ -10,6 +10,12 @@ $("#menu-toggle").click(function(e) {
 
 // {{--AJAX Function to Edit User--}}
 var UserId = '';
+var lastName = '';
+var firstName = '';
+var userRole = '';
+var email = '';
+var password = '';
+var status = '';
 
 // {{--Edit Data from Modal--}}
 $(document).on('click', '.edit-user-modal', function() {
@@ -30,9 +36,15 @@ $(document).on('click', '.edit-user-modal', function() {
     $('#status').text($(this).data('status'));
     $('#user_modal').modal('show');
 
+    lastName =  $(this).data('lastname');
+    firstName =  $(this).data('firstname');
+    userRole =  $(this).data('userrole');
+    email =  $(this).data('email');
+    password =  $(this).data('password');
+    status =  $(this).data('status');
+
     UserId = $(this).data('id');
 });
-
 
 $('.user-modal-footer').on('click', '.edit_user_action_modal', function() {
 
@@ -51,15 +63,28 @@ $('.user-modal-footer').on('click', '.edit_user_action_modal', function() {
         },
         success: function (data) {
             if ((data.errors)) {
-                $('.errorLastName').text('');
-                $('.errorFirstName').text('');
-                $('.errorEmail').text('');
-                $('.errorPassword').text('');
 
-                $('.errorLastName').removeClass('rs-hidden').text(data.errors.lastName);
-                $('.errorFirstName').removeClass('rs-hidden').text(data.errors.firstName);
-                $('.errorEmail').removeClass('rs-hidden').text(data.errors.email);
-                $('.errorPassword').removeClass('rs-hidden').text(data.errors.password);
+                $('.errorLastName').text('.');
+                $('.errorFirstName').text('.');
+                $('.errorEmail').text('.');
+                $('.errorPassword').text('.');
+
+                if ((data.errors.lastName)) {
+                    $('.errorLastName').removeClass('rs-hidden').text(data.errors.lastName);
+                }
+
+                if ((data.errors.firstName)) {
+                    $('.errorFirstName').removeClass('rs-hidden').text(data.errors.firstName);
+                }
+
+                if ((data.errors.email)) {
+                    $('.errorEmail').removeClass('rs-hidden').text(data.errors.email);
+                }
+
+                if ((data.errors.password)) {
+                    $('.errorPassword').removeClass('rs-hidden').text(data.errors.password);
+                }
+
 
             } else {
                 $('.item' + data.id).replaceWith("" +
@@ -82,14 +107,17 @@ $('.user-modal-footer').on('click', '.edit_user_action_modal', function() {
                     "</tr>");
 
                 $('#user_modal').modal('hide');
-                $('.container-message .rs-msg').text('User successfully Updated.');
-                $('.container-message').removeClass('hidden');
-                $('.container-message').removeClass('animated fadeOut');
-                $('.container-message').addClass('animated fadeInUp');
-                $('.container-message').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                    $('.container-message').removeClass('animated fadeInUp');
-                    $('.container-message').addClass('animated fadeOut');
-                });
+
+                if (data.lastName != lastName || data.firstName != firstName || data.email != email || data.password != password || data.userRole != userRole || data.status != status) {
+                    $('.container-message .rs-msg').text('User successfully Updated.');
+                    $('.container-message').removeClass('hidden');
+                    $('.container-message').removeClass('animated fadeOut');
+                    $('.container-message').addClass('animated fadeInUp');
+                    $('.container-message').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                        $('.container-message').removeClass('animated fadeInUp');
+                        $('.container-message').addClass('animated fadeOut');
+                    });
+                }
 
                 // to clear values on fields
                 $('#lastname').val('');
@@ -99,10 +127,10 @@ $('.user-modal-footer').on('click', '.edit_user_action_modal', function() {
                 $('#password').val('');
                 $('#status').text('Enabled');
 
-                $('.errorLastName').text('');
-                $('.errorFirstName').text('');
-                $('.errorEmail').text('');
-                $('.errorPassword').text('');
+                $('.errorLastName').text('.');
+                $('.errorFirstName').text('.');
+                $('.errorEmail').text('.');
+                $('.errorPassword').text('.');
             }
         }
     });
@@ -152,15 +180,29 @@ $('.user-modal-footer').on('click', '.add_user_action_modal', function() {
         },
         success: function (data) {
             if ((data.errors)) {
-                $('.errorLastName').text('');
-                $('.errorFirstName').text('');
-                $('.errorEmail').text('');
-                $('.errorPassword').text('');
 
-                $('.errorLastName').removeClass('rs-hidden').text(data.errors.lastName);
-                $('.errorFirstName').removeClass('rs-hidden').text(data.errors.firstName);
-                $('.errorEmail').removeClass('rs-hidden').text(data.errors.email);
-                $('.errorPassword').removeClass('rs-hidden').text(data.errors.password);
+                $('.errorLastName').text('.');
+                $('.errorFirstName').text('.');
+                $('.errorPassword').text('.');
+                $('.errorEmail').text('.');
+
+
+                if ((data.errors.lastName)) {
+                    $('.errorLastName').removeClass('rs-hidden').text(data.errors.lastName);
+                }
+
+                if ((data.errors.firstName)) {
+                    $('.errorFirstName').removeClass('rs-hidden').text(data.errors.firstName);
+                }
+
+                if ((data.errors.email)) {
+                    $('.errorEmail').removeClass('rs-hidden').text(data.errors.email);
+                }
+
+                if ((data.errors.password)) {
+                    $('.errorPassword').removeClass('rs-hidden').text(data.errors.password);
+                }
+
 
             } else {
                 $('.error').remove();
@@ -197,17 +239,15 @@ $('.user-modal-footer').on('click', '.add_user_action_modal', function() {
                 UserCount = UserCount + 1;
                 $('.user-count').text(UserCount);
                 $('.user-count2').text(UserCount);
+
+                // to clear values on fields
+                $('#lastname').val('');
+                $('#firstname').val('');
+                $('#email').val('');
+                $('#password').val('');
+                $('#userrole').text('Employee');
+                $('#status').text('Enabled');
             }
-
-            // to clear values on fields
-            $('#lastname').val('');
-            $('#firstname').val('');
-            $('#email').val('');
-            $('#password').val('');
-            $('#userrole').text('Employee');
-            $('#status').text('Enabled');
-
-
         }
     });
 });
@@ -270,6 +310,12 @@ $('.user-modal-footer').on('click', '.delete_user_action_modal', function() {
 
 
 // {{--AJAX Function to Edit User--}}
+lastName = '';
+firstName = '';
+userRole = '';
+email = '';
+password = '';
+status = '';
 
 // {{--Edit Data from Modal--}}
 $(document).on('click', '.edit2-user-modal', function() {
@@ -282,6 +328,13 @@ $(document).on('click', '.edit2-user-modal', function() {
     $('#user-action-btn-modal').removeClass('edit_user_action_modal');
     $('#user-action-btn-modal').removeClass('add_user_action_modal');
     $('#user-action-btn-modal').removeClass('delete_user_action_modal');
+
+    lastName =  $('.delete-user-modal').data('lastname');
+    firstName =  $('.delete-user-modal').data('firstname');
+    userRole =  $('.delete-user-modal').data('userrole');
+    email =  $('.delete-user-modal').data('email');
+    password =  $('.delete-user-modal').data('password');
+    status =  $('.delete-user-modal').data('status');
 
 });
 
@@ -303,15 +356,28 @@ $('.user-modal-footer').on('click', '.edit2_user_action_modal', function() {
         },
         success: function (data) {
             if ((data.errors)) {
-                $('.errorLastName').text('');
-                $('.errorFirstName').text('');
-                $('.errorEmail').text('');
-                $('.errorPassword').text('');
 
-                $('.errorLastName').removeClass('rs-hidden').text(data.errors.lastName);
-                $('.errorFirstName').removeClass('rs-hidden').text(data.errors.firstName);
-                $('.errorEmail').removeClass('rs-hidden').text(data.errors.email);
-                $('.errorPassword').removeClass('rs-hidden').text(data.errors.password);
+                $('.errorLastName').text('.');
+                $('.errorFirstName').text('.');
+                $('.errorEmail').text('.');
+                $('.errorPassword').text('.');
+
+                if ((data.errors.lastName)) {
+                    $('.errorLastName').removeClass('rs-hidden').text(data.errors.lastName);
+                }
+
+                if ((data.errors.firstName)) {
+                    $('.errorFirstName').removeClass('rs-hidden').text(data.errors.firstName);
+                }
+
+                if ((data.errors.email)) {
+                    $('.errorEmail').removeClass('rs-hidden').text(data.errors.email);
+                }
+
+                if ((data.errors.password)) {
+                    $('.errorPassword').removeClass('rs-hidden').text(data.errors.password);
+                }
+
 
             } else {
                 $('.item' + data.id).replaceWith("" +
@@ -334,14 +400,17 @@ $('.user-modal-footer').on('click', '.edit2_user_action_modal', function() {
                     "</tr>");
 
                 $('#user_modal').modal('hide');
-                $('.container-message .rs-msg').text('User successfully Updated.');
-                $('.container-message').removeClass('hidden');
-                $('.container-message').removeClass('animated fadeOut');
-                $('.container-message').addClass('animated fadeInUp');
-                $('.container-message').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                    $('.container-message').removeClass('animated fadeInUp');
-                    $('.container-message').addClass('animated fadeOut');
-                });
+
+                if (data.lastName != lastName) {
+                    $('.container-message .rs-msg').text('User successfully Updated.');
+                    $('.container-message').removeClass('hidden');
+                    $('.container-message').removeClass('animated fadeOut');
+                    $('.container-message').addClass('animated fadeInUp');
+                    $('.container-message').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                        $('.container-message').removeClass('animated fadeInUp');
+                        $('.container-message').addClass('animated fadeOut');
+                    });
+                }
 
                 // to clear values on fields
                 $('#lastname').val('');
@@ -351,10 +420,10 @@ $('.user-modal-footer').on('click', '.edit2_user_action_modal', function() {
                 $('#password').val('');
                 $('#status').text('Enabled');
 
-                $('.errorLastName').text('');
-                $('.errorFirstName').text('');
-                $('.errorEmail').text('');
-                $('.errorPassword').text('');
+                $('.errorLastName').text('.');
+                $('.errorFirstName').text('.');
+                $('.errorEmail').text('.');
+                $('.errorPassword').text('.');
             }
         }
     });

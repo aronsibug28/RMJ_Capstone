@@ -11,34 +11,6 @@
     }
     /* Navbar */
 
-    /* Sidebar */
-    #wrapper {
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    .rs-sidebar-left-fixed {
-        display: none;
-    }
-    #wrapper, #wrapper.toggled {
-        padding-left: 0;
-    }
-    #wrapper #sidebar-wrapper{
-        width: 0;
-    }
-    #wrapper + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 0;
-    }
-    #wrapper.toggled #sidebar-wrapper{
-        width: 0;
-    }
-    #wrapper.toggled + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 0;
-    }
-    /* Side bar */
 }
 
 
@@ -86,30 +58,6 @@
         border: none;
     }
     /* Navbar*/
-
-
-    /* Sidebar */
-    #wrapper {
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    #wrapper.toggled #sidebar-wrapper {
-        width: 265px;
-    }
-    #wrapper #sidebar-wrapper{
-        width: 0;
-    }
-    #wrapper.toggled + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 265px;
-    }
-    #wrapper + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 0;
-    }
-    /* Sidebar */
 }
 
 
@@ -118,56 +66,12 @@
     and (min-width: 992px)
     and (max-width: 1279px) {
 
-    /* Sidebar */
-    #wrapper {
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-    #wrapper #sidebar-wrapper{
-        width: 265px;
-    }
-    #wrapper.toggled + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 0;
-    }
-    #wrapper + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 265px;
-    }
-    /* Sidebar */
 }
 
 
 /* Huge Desktop View */
 @media only screen and (min-width: 1280px) {
 
-    /* Sidebar */
-    #wrapper {
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-    #wrapper #sidebar-wrapper{
-        width: 265px;
-    }
-    #wrapper.toggled + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 0;
-    }
-    #wrapper + .rs-sidebar-right-static {
-        position: relative;
-        margin-left: 265px;
-    }
-    /* Sidebar */
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/
