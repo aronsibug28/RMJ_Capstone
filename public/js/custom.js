@@ -33,3 +33,6 @@ $(document).ready(function () {
     });
 });
 
+
+$('.rs-submenu-header-buttons .glyphicon').tooltip('toggle');
+

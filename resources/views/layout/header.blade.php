@@ -167,12 +167,12 @@
             </div>
 
             <li class="sidebar-brand">
-                <a class="navbar-brand rs-sidebar-menu" href="#">
+                <a class="navbar-brand rs-sidebar-menu  rs-sidebar-active" style="color: white" href="#">
                     <span class="glyphicon glyphicon-user"></span>&nbsp; User Management
                 </a>
             </li>
             <li>
-                <a href="#" class="rs-sidebar-active" style="color:white;">System Users</a>
+                <a href="#" class="rs-sidebar-menu-active" style="color: #F60006;">System Users</a>
             </li>
             <li>
                 <a href="#">User Roles</a>

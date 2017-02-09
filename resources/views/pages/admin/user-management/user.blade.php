@@ -11,6 +11,29 @@
             <h3>
                 <span class="rs-submenu">System Users</span>
             </h3>
+
+            <div class="pull-right">
+                <h3 class="rs-submenu-header-buttons">
+                    <span class="glyphicon glyphicon-search" id="search" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"></span>
+                </h3>
+
+                <h3 class="rs-submenu-header-buttons">
+                    <span class="glyphicon glyphicon-plus add-user-modal" id="add"></span>
+                </h3>
+
+                <h3 class="rs-submenu-header-buttons">
+                    <span class="glyphicon glyphicon-trash" id="delete"></span>
+                </h3>
+
+                <h3 class="rs-submenu-header-buttons">
+                    <span class="glyphicon glyphicon-filter" id="filter"></span>
+                </h3>
+
+                <h3 class="rs-submenu-header-buttons">
+                    <span class="glyphicon glyphicon-bookmark" id="bookmark"></span>
+                </h3>
+            </div>
+
         </div>
     </div>
 
