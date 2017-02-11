@@ -27,7 +27,10 @@
 {{--Message--}}
 <div class="container-message hidden">
     <div class="rs-msg-check">
-        <span class="icon-check rs-check"></span>
+        <span class="rs-check">
+            <img class="check hidden" src="/images/check.png">
+            <img class="warning hidden" src="/images/warning.png">
+        </span>
     </div>
     <div class="rs-msg">User successfully updated.</div>
 </div>

@@ -92,16 +92,19 @@
                 </form>
 
                 <div class="deleteUser">
-                    Are you sure you want to delete
-                    <a class="edit2-user-modal"><span class="user-email"></span></a>'s account?
-                    <span class="hidden id"></span><br><br>
+                    <span class="delete-msg">
+                        Are you sure you want to delete
+                        <a class="edit2-user-modal"><span class="user-email"></span></a>'s account?
+                    </span>
+                    <span class="hidden id"></span>
+                    <br><br>
                 </div>
 
             </div>
 
             <div class="modal-footer user-modal-footer">
                 <button type="button" href="#" class="btn btn-link" data-dismiss="modal">Cancel</button>
-                <button type="button" href="#" id="user-action-btn-modal" class="btn btn-primary rs-btn-primary user_action_modal"  onclick="validate()">Save Changes</button>
+                <button type="button" href="#" id="user-action-btn-modal" class="btn btn-primary rs-btn-primary user_action_modal">Save Changes</button>
             </div>
         </div>
     </div>

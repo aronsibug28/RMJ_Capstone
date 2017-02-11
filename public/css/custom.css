@@ -165,7 +165,7 @@
 /* NAVBAR */
 
 body {
-    background-color: #f6f6f6;
+    background-color: #eeeeee;
     font-family: "Helvetica";
 }
 
@@ -177,6 +177,7 @@ body {
     margin: 20px;
     position: absolute;
     background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 rgba(170, 170, 170, 0.4);
 }
 
 .rs-sidebar-right-menu {
@@ -201,7 +202,7 @@ body {
 
 
 .rs-border {
-    box-shadow: 0 2px 3px 0 rgba(215, 215, 215, 0.5);
+    box-shadow: 0 2px 3px 0 rgba(170, 170, 170, 0.4);
 }
 
 .rs-profile-circle {
@@ -245,7 +246,7 @@ body {
     padding: 8px 0 5px 15px;
     width: 243px;
     height: 35px;
-    background-color: #ececec;
+    background-color: #cdcdcd;
     font-size: 15px;
     font-weight: 500;
 }
@@ -355,6 +356,7 @@ body {
     display: block;
     text-decoration: none;
     color: #757575;
+    transition: all 0.2s;
 }
 
 .sidebar-nav li:not(.sidebar-brand) {
@@ -502,7 +504,7 @@ h3.rs-submenu-header-buttons {
 }
 
 .rs-table-border {
-    box-shadow: 0 2px 3px 0 rgba(229,229,229,.5);
+    box-shadow: 0 2px 3px 0 rgba(170, 170, 170, 0.4);
     height: auto;
     margin-bottom: -20px;
     padding: 0 25px 0 25px;
@@ -519,15 +521,11 @@ table tr {
     border: none;
 }
 
-table thead:first-child tr td {
-    padding: 25px 0 25px 35px;
-}
-
 table thead:last-child tr td {
     padding: 15px 0 15px 0;
 }
 
-table thead:nth-child(2) tr {
+table thead:first-child tr {
     font-weight: bold;
     padding: 0;
     height: 25px;
@@ -543,13 +541,29 @@ table thead:nth-child(2) tr td {
 
 table tbody tr td {
     font-size: 13px;
+    cursor: default;
 }
+
 
 table thead tr td {
     font-size: 13px;
+    cursor: default;
 }
 
+.rs-table-search {
+    float: right;
+    margin-top: 7px;
+    margin-right: 10px;
+}
 
+.rs-table-actions {
+    float: right;
+    margin-top: 5px;
+}
+
+.highlight {
+    background-color: yellow;
+}
 /* Checkbox */
 /* Base for label styling */
 [type="checkbox"]:not(:checked),
@@ -730,28 +744,28 @@ input[type="text"]:focus {
 
 
 
-/* Let's get this party started */
-::-webkit-scrollbar {
-    width: 10px;
-}
+/*!* Let's get this party started *!*/
+/*::-webkit-scrollbar {*/
+    /*width: 10px;*/
+/*}*/
 
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
+/*!* Track *!*/
+/*::-webkit-scrollbar-track {*/
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    /*-webkit-border-radius: 5px;*/
+    /*border-radius: 5px;*/
+/*}*/
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    background: #E90006;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(233, 0, 6, 0.71);
-}
+/*!* Handle *!*/
+/*::-webkit-scrollbar-thumb {*/
+    /*-webkit-border-radius: 5px;*/
+    /*border-radius: 5px;*/
+    /*background: #E90006;*/
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);*/
+/*}*/
+/*::-webkit-scrollbar-thumb:window-inactive {*/
+    /*background: rgba(233, 0, 6, 0.71);*/
+/*}*/
 
 /*!* Floating Button *!*/
 
@@ -1025,12 +1039,12 @@ input[type="text"]:focus {
     width: auto;
     height: 50px;
     position: fixed;
-    right: 100px;
-    bottom: 24px;
+    right: 20px;
+    bottom: 20px;
     padding: 10px;
     font-size: 16px;
     color: white;
-    background-color: rgba(255, 0, 6, 0.86);
+    background-color: rgba(8, 126, 0, 0.86);
     box-shadow: 1px 1px 5px 1px #707070;
 }
 
@@ -1038,7 +1052,8 @@ input[type="text"]:focus {
     width: 30px;
     height: 30px;
     border-radius: 30px;
-    background-color: rgb(10, 135, 0);
+    color: red;
+    background-color: rgb(255, 255, 255);
     float: left;
 }
 
@@ -1072,6 +1087,73 @@ input[type="text"]:focus {
 }
 
 .rs-check {
-    padding: 8px;
+    padding: 7px;
+    color: red;
+}
+
+.rs-check img {
+    margin-top: 5px;
 }
 /* /Message */
+
+
+
+/* Tooltip */
+.rs-tooltip1 {
+    margin-left: -60px;
+    margin-top: 12px;
+    width: 150px;
+    height: 15px;
+    background-color: transparent;
+    text-align: center;
+    color: dimgray;
+}
+
+.rs-tooltip2 {
+    margin-left: -40px;
+    margin-top: -3px;
+    padding-top: 5px;
+    width: 110px;
+    height: 34px;
+    background-color: dimgray;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #bfbfbf;
+}
+
+.rs-tooltip {
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -8px;
+    margin-right: 0;
+    padding: 0;
+    z-index: 1000;
+    height: 50px;
+    background-color: transparent;
+    text-align: center;
+    color: transparent;
+}
+
+.rs-tooltip-search {
+    margin-left: 0;
+}
+
+.rs-tooltip-add {
+    margin-left: 50px;
+}
+
+.rs-tooltip-delete {
+    margin-left: 105px;
+}
+
+.rs-tooltip-filter {
+    margin-left: 155px;
+}
+
+.rs-tooltip-bookmark {
+    margin-left: 210px;
+    margin-right: 0;
+}
+
+/* /Tooltip */

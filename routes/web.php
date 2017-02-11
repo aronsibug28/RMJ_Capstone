@@ -17,6 +17,7 @@ Route::get('/admin/users', 'PageController@users');
 Route::get('/admin/user-roles', 'PageController@userRoles');
 
 
+Route::post('/deleteUsers', 'UsersController@deleteUsers');
 Route::post('/editUser', 'UsersController@editUser');
 Route::post('/addUser', 'UsersController@addUser');
 Route::post('/deleteUser', 'UsersController@deleteUser');

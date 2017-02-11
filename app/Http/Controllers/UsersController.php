@@ -79,7 +79,17 @@ class UsersController extends Controller
 
     public function deleteUser(Request $request)
     {
-        $user = User::find($request->id)->delete();
+        //Single Delete
+        $user = User::find($request->id);
+        $user->delete();
+        return response()->json($user);
+    }
+
+    public function deleteUsers(Request $request)
+    {
+        //Multiple Delete
+        $user = Input::get('id');
+        User::destroy($user);
         return response()->json($user);
     }
 }
